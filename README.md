@@ -1,4 +1,4 @@
-Example of server-side rendering with React.js and ParcelJS
+# Example of server-side rendering with React.js and ParcelJS
 
 ## Development
 In development, you don't have server-side rendering. All you need to do is `npm start`.
