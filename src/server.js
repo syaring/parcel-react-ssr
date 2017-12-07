@@ -16,5 +16,3 @@ export default function middleware(req, res) {
 
   res.send(html);
 }
-
-global.__MIDDLEWARE__ = middleware;
