@@ -5,7 +5,6 @@ const executeSsr = require('./dist/server/server').default;
 
 const app = express();
 
-app.use('/client', express.static('dist/client'));
 app.use('/dist', express.static('dist/client'));
 app.get('/*', executeSsr);
 
