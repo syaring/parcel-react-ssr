@@ -1,6 +1,6 @@
 {
   "name": "parcel-react-ssr",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Example of SSR with React and ParcelJS",
   "scripts": {
     "start": "parcel src/index.html",
