@@ -10,9 +10,8 @@ import './App.css';
 export default function App() {
   return (
     <div>
-      <Helmet>
+      <Helmet titleTemplate="%s - Parcel Example" defaultTitle="It works!">
         <meta charSet="utf-8" />
-        <title>SSR example with React.js and ParcelJS</title>
       </Helmet>
       <div>
         <Link to="/">Home</Link> - <Link to="/about">About</Link>

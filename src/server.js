@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import { Helmet } from 'react-helmet';
 import { StaticRouter } from 'react-router-dom';
+import cheerio from 'cheerio';
 
 import App from './components/App';
 import fs from 'fs';
@@ -23,23 +24,11 @@ export default function middleware(req, res) {
   }
 
   const helmet = Helmet.renderStatic();
-  const head =
-    helmet.title.toString() + helmet.meta.toString() + helmet.link.toString();
-  const htmlAttributes = helmet.htmlAttributes.toString();
-  const bodyAttributes = helmet.bodyAttributes.toString();
+  const $template = cheerio.load(HTML_TEMPLATE);
+  $template('head').append(
+    helmet.title.toString() + helmet.meta.toString() + helmet.link.toString()
+  );
+  $template('#app').html(content);
 
-  let html = HTML_TEMPLATE.replace(
-    '<div id="app">',
-    '<div id="app">' + content
-  ).replace('<head>', '<head>' + head);
-
-  if (htmlAttributes) {
-    html = html.replace('<html>', '<html ' + htmlAttributes + '>');
-  }
-
-  if (bodyAttributes) {
-    html = html.replace('<body>', '<body ' + bodyAttributes + '>');
-  }
-
-  res.send(html);
+  res.send($template.html());
 }
