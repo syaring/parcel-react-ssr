@@ -6,7 +6,8 @@ export default function AboutPage() {
     <div>
       <Helmet>
         <title>About me!</title>
-      </Helmet>About page!
+      </Helmet>
+      About page!
     </div>
   );
 }
