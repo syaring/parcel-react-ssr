@@ -12,6 +12,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "repository": "reactivestack/parcel-react-ssr",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-require-ignore": "^0.1.1",
