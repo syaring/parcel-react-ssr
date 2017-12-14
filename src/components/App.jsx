@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Switch, Route, Redirect, Link } from 'react-router-dom';
 
-import HomePage from './HomePage';
+import UserPage from './UserPage';
 import AboutPage from './AboutPage';
 
 import './App.css';
@@ -14,10 +14,11 @@ export default function App() {
         <meta charSet="utf-8" />
       </Helmet>
       <div>
-        <Link to="/">Home</Link> - <Link to="/about">About</Link>
+        <Link to="/">Hello world</Link> - <Link to="/about">About</Link>
       </div>
       <Switch>
-        <Route exact path="/" component={HomePage} />
+        <Redirect exact from="/" to="/user/exon" />
+        <Route path="/user/:login" component={UserPage} />
         <Route path="/about" component={AboutPage} />
         <Redirect to="/" />
       </Switch>
