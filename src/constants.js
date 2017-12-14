@@ -1,2 +1,5 @@
 export const GITHUB_ENDPOINT = 'https://api.github.com/graphql';
-export const GITHUB_TOKEN = 'ed4f1aab1eb13a4b81adae2f79b5fe8ddf1898d4';
+
+// You must create your own GitHub token
+// https://github.com/settings/tokens
+export const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
