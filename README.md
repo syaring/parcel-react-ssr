@@ -3,7 +3,7 @@
 Complete example of a React.js with server-side rendering and bundled with ParcelJS. It includes:
 
 - React.js - UI library
-- React Helmet - SEO library - Manage your <head> and page title
+- React Helmet - SEO library - Manage your `<head />` and page title
 - React Router - URL Router
 - Apollo Client - GraphQL client
 - Communicate with GitHub GraphQL API as an example
