@@ -25,6 +25,7 @@ The browser version is in the `dist/client` folder and the Node.js version is in
 
 1. [package.json](package.json) - Start by reading the `scripts` section to understand how the build process works. Yes it's that dead simple!
 1. [app/index.html](app/index.html) - Your only HTML file acting as a template
+1. [app/client.js](app/client.js) - Entry point for your browser version
 1. [app/App.jsx](app/App.jsx) - Your main application component shared between your browser and Node.js version
 1. [app/HelloWorld.jsx](app/HelloWorld.jsx) - Dead simple hello world
 1. [app/HelloWorld.scss](app/HelloWorld.scss) - Example of SCSS
