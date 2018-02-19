@@ -1,25 +1,33 @@
-# Example of server-side rendering with React.js and ParcelJS
+# parcel-react-ssr
 
-Complete example of a React.js with server-side rendering and bundled with ParcelJS. It includes:
+Simple example of how to do server-rendering. You will not believe how this is easy!
 
-- React.js - UI library
-- React Helmet - SEO library - Manage your `<head />` and page title
-- React Router - URL Router
-- Apollo Client - GraphQL client
-- Communicate with GitHub GraphQL API as an example
+Using:
 
-## Development
-In development, you don't have server-side rendering. All you need to do is `npm start`.
+* parcel-bundler
+* react
+* react-router-dom
+* react-helmet (SEO)
 
-## Production
-To run into production, you need to build first and then you can run the app using the express server.
+## How to run
 
- - `npm run build`
- - `node server`
+* `npm run dev` - Run the development server with hot reload but no server-rendering
+* `npm run build` - Build for production, required before running
+* `npm start` - Start the production server
 
- ## How is this working?
- There is two build: one for the browser using Parcel.js and one for Node.js using BabelJS.
+## How does it work?
 
- The parcel build is in dist/client and is a regular build just like you would do without server-side rendering.
+To do proper server-rendering, the code is bundled in two version: one for the browser and one for Node.js.
 
- The Node.js build is in dist/client and is only transformed through BabelJS. It uses a babel plugin to ignore the file extensions that should not be executed through the server. You can add your own!
+The browser version is in the `dist/client` folder and the Node.js version is in `dist/server`. However, they both share the same public path for their files: `/dist` and it points to the browser version. Go read the code, it's pretty straightforward!
+
+## Read the code!
+
+1. [package.json](package.json) - Start by reading the `scripts` section to understand how the build process works. Yes it's that dead simple!
+1. [app/index.html](app/index.html) - Your only HTML file, it will be used for development by Parcel
+1. [app/App.jsx](app/App.jsx) - Your main application component shared between your browser and Node.js version
+1. [app/HelloWorld.jsx](app/HelloWorld.jsx) - Dead simple hello world
+1. [app/HelloWorld.scss](app/HelloWorld.scss) - Example of SCSS
+1. [server/index.js](server/index.js) - Entry point for your Node.js version
+1. [server/middleware.js](server/middleware.js) - Middleware taking care of server-rendering
+1. [server/generateHtml.js](server/generateHtml.js) - Generate the HTML using `index.html` as the template with cheerio
