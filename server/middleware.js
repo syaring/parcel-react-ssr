@@ -1,5 +1,6 @@
 // Middleware for the server-rendering
 
+import { printDrainHydrateMarks } from 'react-imported-component';
 import React from 'react';
 import ReactDOM from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
@@ -14,7 +15,7 @@ export default function middleware(req, res) {
     <StaticRouter location={req.originalUrl} context={context}>
       <App />
     </StaticRouter>
-  );
+  ) + printDrainHydrateMarks();
 
   // If react-router is redirecting, do it on the server side
   if (context.url) {
