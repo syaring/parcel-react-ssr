@@ -1,9 +1,13 @@
 // Setup express to handle Web requests
 
+import compression from 'compression';
 import express from 'express';
 import middleware from './middleware';
 
 const app = express();
+
+// Add gzip compression to responses
+app.use(compression());
 
 // Expose the public directory as /dist and point to the browser version
 app.use('/dist', express.static(__dirname + '/../client'));

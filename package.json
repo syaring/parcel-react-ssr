@@ -3,21 +3,24 @@
   "version": "0.4.0",
   "description": "Example of SSR with React and ParcelJS",
   "main": "index.js",
-  "keywords": ["parcel", "react", "ssr"],
+  "keywords": [
+    "parcel",
+    "react",
+    "ssr"
+  ],
   "author": "Benoit Tremblay <benoit@reactivestack.com>",
   "license": "MIT",
   "repository": "reactivestack/parcel-react-ssr",
   "scripts": {
     "dev": "parcel app/index.html",
     "build": "rimraf dist && npm run build-client && npm run build-server",
-    "build-client":
-      "parcel build app/index.html -d dist/client --public-url /dist",
-    "build-server":
-      "parcel build server/index.js -d dist/server --public-url /dist --target=node6",
+    "build-client": "parcel build app/index.html -d dist/client --public-url /dist",
+    "build-server": "parcel build server/index.js -d dist/server --public-url /dist --target=node6",
     "start": "node dist/server"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
+    "compression": "^1.7.2",
     "express": "^4.16.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
