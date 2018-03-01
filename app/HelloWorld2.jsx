@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import './codeSplitAssets/NyanCat.css';
 import Go from './codeSplitAssets/NyanCat.js';
 
@@ -11,6 +12,9 @@ export default class Nyan extends Component {
 
     render() {
         return <div>
+            <Helmet>
+                <title>Code Split</title>
+            </Helmet>
             <h1 className="hello-world">Hello world 2!</h1>
             <p style={{ textAlign: 'center' }}>
                 This is a code-split component.

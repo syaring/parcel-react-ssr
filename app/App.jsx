@@ -5,6 +5,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import favicon from './favicon.ico';
 
 import asyncComponent from './AsyncComponent';
 import HelloWorld from './HelloWorld';
@@ -16,6 +17,7 @@ export default function App() {
     <div>
       <Helmet defaultTitle="Hello World!">
         <meta charSet="utf-8" />
+        <link href={favicon} rel="Shortcut Icon" type="image/x-icon" />
       </Helmet>
       <Switch>
         <Route exact path="/" component={HelloWorld} />
