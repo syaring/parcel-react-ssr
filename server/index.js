@@ -2,12 +2,18 @@
 
 import compression from 'compression';
 import express from 'express';
+import path from 'path';
 import middleware from './middleware';
+import favicon from '../app/favicon.ico';
 
 const app = express();
 
 // Add gzip compression to responses
 app.use(compression());
+
+// Favicon
+const faviconFileName = favicon.slice(favicon.lastIndexOf('/') + 1);
+app.use('/favicon.ico', (req, res) => res.sendFile(path.join(__dirname, `../client/${faviconFileName}`)));
 
 // Expose the public directory as /dist and point to the browser version
 app.use('/dist', express.static(__dirname + '/../client'));
