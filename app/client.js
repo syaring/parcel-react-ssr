@@ -6,7 +6,7 @@ import { rehydrateMarks } from 'react-imported-component';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import importedComponents from './imported';
+import importedComponents from './imported'; // eslint-disable-line
 
 import App from './App';
 

@@ -16,7 +16,7 @@ const faviconFileName = favicon.slice(favicon.lastIndexOf('/') + 1);
 app.use('/favicon.ico', (req, res) => res.sendFile(path.join(__dirname, `../client/${faviconFileName}`)));
 
 // Expose the public directory as /dist and point to the browser version
-app.use('/dist', express.static(__dirname + '/../client'));
+app.use('/dist', express.static(`${__dirname}/../client`));
 
 // Anything unresolved is serving the application and let
 // react-router do the routing!

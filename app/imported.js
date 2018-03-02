@@ -1,3 +1,7 @@
-export default {
-      "./app/HelloWorld2": () => import('./HelloWorld2'),
-    }
+/* eslint-disable */ 
+    import {assignImportedComponents} from 'react-imported-component';
+    const applicationImports = {
+      
+    };
+    assignImportedComponents(applicationImports);
+    export default applicationImports;
