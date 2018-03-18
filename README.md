@@ -8,6 +8,14 @@ Using:
 * react
 * react-router-dom
 * react-helmet (SEO)
+* react-imported-component (Code Splitting)
+
+Handy Extras
+
+* gzip compression
+* eslint
+* [favicon example](server/index.js#16)
+* [Code split example](app/App.jsx#12)
 
 ## How to run
 
