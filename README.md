@@ -36,6 +36,7 @@ The browser version is in the `dist/client` folder and the Node.js version is in
 1. [app/client.js](app/client.js) - Entry point for your browser version
 1. [app/App.jsx](app/App.jsx) - Your main application component shared between your browser and Node.js version
 1. [app/HelloWorld.jsx](app/HelloWorld.jsx) - Dead simple hello world
+1. [app/HelloWorld2.jsx](app/HelloWorld2.jsx) - A fun code split example
 1. [app/HelloWorld.scss](app/HelloWorld.scss) - Example of SCSS
 1. [server/index.js](server/index.js) - Entry point for your Node.js version
 1. [server/middleware.js](server/middleware.js) - Middleware taking care of server-rendering
