@@ -3,10 +3,13 @@
 // It's a nice library you should use!
 
 import React from 'react';
+import importedComponent from 'react-imported-component';
 import { Helmet } from 'react-helmet';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
 import HelloWorld from './HelloWorld';
+
+const HelloWorld2 = importedComponent(() => import('./HelloWorld2'));
 
 export default function App() {
   return (
@@ -16,6 +19,7 @@ export default function App() {
       </Helmet>
       <Switch>
         <Route exact path="/" component={HelloWorld} />
+        <Route exact path="/codeSplit" component={HelloWorld2} />
         <Redirect to="/" />
       </Switch>
     </div>
