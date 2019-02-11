@@ -2,7 +2,7 @@
 // We setup react-helmet, which let us nicely manage our <head />
 // It's a nice library you should use!
 
-import React from 'react';
+import * as React from 'react';
 import importedComponent from 'react-imported-component';
 import { Helmet } from 'react-helmet';
 import { Switch, Route, Redirect } from 'react-router-dom';

@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import './codeSplitAssets/NyanCat.css';
 import Go from './codeSplitAssets/NyanCat';
 
-export default class Nyan extends Component {
+export default class Nyan extends React.Component {
   componentDidMount() {
     Go();
   }
