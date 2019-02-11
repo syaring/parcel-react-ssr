@@ -12,15 +12,19 @@
   "license": "MIT",
   "repository": "reactivestack/parcel-react-ssr",
   "scripts": {
-    "dev": "npm run generate-imported-component && parcel app/index.html",
+    "dev": "npm run generate-imported-component && parcel src/browser/index.html -p 8008",
     "build": "rimraf dist && npm run generate-imported-component && npm run build-client && npm run build-server",
-    "build-client": "cross-env BABEL_ENV=client parcel build app/index.html -d dist/client --public-url /dist",
-    "build-server": "cross-env BABEL_ENV=server parcel build server/index.js -d dist/server --public-url /dist --target=node6",
-    "generate-imported-component": "imported-components app app/imported.js",
+    "build-client": "cross-env BABEL_ENV=client parcel build src/server/index.html -d dist/client --public-url /dist",
+    "build-server": "cross-env BABEL_ENV=server parcel build src/server/index.ts -d dist/server --public-url /dist --target=node6",
+    "generate-imported-component": "imported-components src/browser src/browser/imported.ts",
     "start": "node dist/server"
   },
   "dependencies": {
+    "@types/cheerio": "^0.22.10",
+    "@types/compression": "^0.0.36",
+    "@types/express": "^4.16.1",
     "@types/react": "^16.8.2",
+    "@types/react-dom": "^16.8.0",
     "@types/react-helmet": "^5.0.8",
     "@types/react-router-dom": "^4.3.1",
     "cheerio": "^1.0.0-rc.2",
@@ -33,6 +37,7 @@
     "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
+    "@babel/polyfill": "^7.2.5",
     "babel-eslint": "^10.0.1",
     "babel-plugin-dynamic-import-node": "^2.2.0",
     "cross-env": "^5.2.0",

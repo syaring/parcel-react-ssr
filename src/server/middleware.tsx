@@ -1,17 +1,24 @@
 // Middleware for the server-rendering
-
+import { Handler } from 'express';
 import { printDrainHydrateMarks } from 'react-imported-component';
-import React from 'react';
-import ReactDOM from 'react-dom/server';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom';
 
-import App from '../app/App';
+import App from '../browser/App';
 import generateHtml from './generateHtml';
 
-export default (req, res) => {
+export const renderReact: Handler = (req, res) => {
   // Generate the server-rendered HTML using the appropriate router
-  const context = {};
-  const router = <StaticRouter location={req.originalUrl} context={context}><App /></StaticRouter>;
+  const context: any = {};
+  const router = (
+    <StaticRouter
+      location={req.originalUrl}
+      context={context}
+    >
+      <App />
+    </StaticRouter>
+  );
   const markup = ReactDOM.renderToString(router);
 
   // If react-router is redirecting, do it on the server side

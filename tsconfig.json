@@ -1,10 +1,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "rootDirs": [
-      "app",
-      "server"
-    ],
+    "rootDir": "src",
     "target": "esnext",
     "module": "commonjs",
     "moduleResolution": "node",

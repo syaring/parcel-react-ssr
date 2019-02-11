@@ -1,10 +1,10 @@
 // Setup express to handle Web requests
 
-import compression from 'compression';
-import express from 'express';
-import path from 'path';
-import middleware from './middleware';
-import favicon from '../app/favicon.ico';
+import * as compression from 'compression';
+import * as express from 'express';
+import * as path from 'path';
+import { renderReact } from './middleware';
+import favicon from '../browser/favicon.ico';
 
 const app = express();
 
@@ -20,7 +20,7 @@ app.use('/dist', express.static(`${__dirname}/../client`));
 
 // Anything unresolved is serving the application and let
 // react-router do the routing!
-app.get('/*', middleware);
+app.get('/*', renderReact);
 
 // Check for PORT environment variable, otherwise fallback on Parcel default port
 const port = process.env.PORT || 1234;

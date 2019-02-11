@@ -1,8 +1,8 @@
 // Generate the HTML using index.html as a template
 
-import fs from 'fs';
-import path from 'path';
-import cheerio from 'cheerio';
+import * as fs from 'fs';
+import * as path from 'path';
+import * as cheerio from 'cheerio';
 import { Helmet } from 'react-helmet';
 
 // The path is relative from server bundle to client bundle, not the source

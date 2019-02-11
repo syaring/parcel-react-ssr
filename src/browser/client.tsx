@@ -3,8 +3,8 @@
 // Here we have <BrowserRouter /> for react-router
 
 import { rehydrateMarks } from 'react-imported-component';
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import importedComponents from './imported'; // eslint-disable-line
 
@@ -28,6 +28,9 @@ if (process.env.NODE_ENV === 'production') {
   ReactDOM.render(app, element);
 }
 
+declare const module: NodeModule & {
+  hot: any;
+}
 // Hot reload is that easy with Parcel
 if (module.hot) {
   module.hot.accept();

@@ -1,7 +1,12 @@
-/* eslint-disable */ 
+
+    /* eslint-disable */
+    /* tslint:disable */
+     
     import {assignImportedComponents} from 'react-imported-component';
-    const applicationImports = {
-      "0": () => import('./HelloWorld2'),
-    };
+    
+    const applicationImports = [
+      () => import('./HelloWorld2'),
+    ];
+    
     assignImportedComponents(applicationImports);
     export default applicationImports;
